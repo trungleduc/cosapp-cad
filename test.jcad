@@ -1,0 +1,105 @@
+{
+  "objects": [
+    {
+      "parameters": {
+        "Width": 15,
+        "Length": 9,
+        "Height": 19,
+        "Placement": {
+          "Axis": [
+            1,
+            0,
+            0
+          ],
+          "Angle": 0,
+          "Position": [
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      "name": "box",
+      "visible": true,
+      "shapeMetadata": {
+        "mass": 2565,
+        "centerOfMass": [
+          4.5,
+          7.5,
+          9.5
+        ],
+        "matrixOfInertia": [
+          [
+            0,
+            0,
+            65407.5
+          ],
+          [
+            125257.5,
+            0,
+            0
+          ],
+          [
+            0,
+            94477.5,
+            0
+          ]
+        ]
+      },
+      "shape": "Part::Box"
+    },
+    {
+      "shapeMetadata": {
+        "centerOfMass": [
+          5.5,
+          12.335337602577441,
+          4.933502430367193
+        ],
+        "matrixOfInertia": [
+          [
+            1.4551915228366852e-11,
+            -3913.3381770454,
+            153725.84321957617
+          ],
+          [
+            145612.50000000006,
+            2.9103830456733704e-11,
+            1.4551915228366852e-11
+          ],
+          [
+            2.9103830456733704e-11,
+            41799.15678042383,
+            -3913.3381770454
+          ]
+        ],
+        "mass": 2475
+      },
+      "visible": true,
+      "parameters": {
+        "Width": 25,
+        "Placement": {
+          "Angle": 2,
+          "Axis": [
+            1,
+            0,
+            0
+          ],
+          "Position": [
+            0,
+            0,
+            0
+          ]
+        },
+        "Length": 11,
+        "Height": 9
+      },
+      "name": "box2",
+      "shape": "Part::Box"
+    }
+  ],
+  "options": {
+    "foo": 1,
+    "guidata": {}
+  },
+  "metadata": {}
+}
