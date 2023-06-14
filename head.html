@@ -162,17 +162,21 @@ var i=new m(t,{});v.onTouch(i,e),this.manipulationHammers.push(i)}},{key:"_clean
 <script type="text/javascript">
     // create an array with nodes
     var nodes = new vis.DataSet([
-            { name: "head", label: "head", title: "head - Component", id: 3, level: 0, hidden: true, physics: false, group: ".head",  },
-            { name: "geom", label: "geom", title: "geom - Geom", id: 1, widthConstraint: {'maximum': '10px'}, group: "head", level: 1,  },
-            { name: "simu", label: "simu", title: "simu - Simulation", id: 2, widthConstraint: {'maximum': '10px'}, group: "head", level: 1,  },
+            { name: "head", label: "head", title: "head - Component", id: 5, level: 0, hidden: true, physics: false, group: ".head",  },
+            { label: "NonLinearSolver", title: "solver - NonLinearSolver", id: 1, level: 0.30000000000000004, shape: "box", hidden: true, physics: false, group: "head",  },
+            { label: "RunSingleCase", title: "runner - RunSingleCase", id: 2, level: 0.5, shape: "box", hidden: true, physics: false, group: "head",  },
+            { name: "geom", label: "geom", title: "geom - Geom", id: 3, widthConstraint: {'maximum': '10px'}, group: "head", level: 1,  },
+            { name: "simu", label: "simu", title: "simu - Simulation", id: 4, widthConstraint: {'maximum': '10px'}, group: "head", level: 1,  },
     ]);
 
     // create an array with edges
     var edges = new vis.DataSet([
-            { from: 1, to: 2, arrows: "to", title: "[mass, tensor_of_inertia, center_of_mass]",  },
-            { from: 2, to: 1, arrows: "to", title: "[length, radius]",  },
-            { from: 3, to: 1, hidden: true, physics: false,  },
-            { from: 3, to: 2, hidden: true, physics: false,  },
+            { from: 1, to: 2, title: "", hidden: true, physics: false,  },
+            { from: 3, to: 4, arrows: "to", title: "[mass, tensor_of_inertia, center_of_mass]",  },
+            { from: 4, to: 3, arrows: "to", title: "[length, radius]",  },
+            { from: 5, to: 3, hidden: true, physics: false,  },
+            { from: 5, to: 4, hidden: true, physics: false,  },
+            { from: 5, to: 1, dashes: true, hidden: true, physics: false,  },
     ]);
 
     var systems = ["head", ];

@@ -3,6 +3,10 @@ def simulate(*args, **kwargs):
     time.sleep(10)
     return 8., 2.
 
+def build_geom(*args, **kwargs):
+    print('COMPUTING')
+    time.sleep(5)
+    print('DONE')
 
 def test(obj):
     if obj.parameters.Height > 10:
