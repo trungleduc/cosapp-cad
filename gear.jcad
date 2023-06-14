@@ -1,33 +1,27 @@
 {
   "objects": [
     {
-      "metadata": null,
+      "shape": "Part::Cylinder",
+      "name": "Cylinder 1",
       "parameters": {
-        "Angle": 360,
-        "Radius": 4.5,
         "Placement": {
           "Position": [
             0,
             0,
             0
           ],
+          "Angle": 90,
           "Axis": [
             1,
             0,
             0
-          ],
-          "Angle": 90
+          ]
         },
-        "Height": 1
+        "Height": 1,
+        "Angle": 360,
+        "Radius": 4.5
       },
-      "visible": false,
       "shapeMetadata": {
-        "mass": 63.61725123519331,
-        "centerOfMass": [
-          -7.818318229331444e-16,
-          -0.5,
-          -4.352963942415439e-17
-        ],
         "matrixOfInertia": [
           [
             2.0671070645229228e-14,
@@ -44,36 +38,41 @@
             644.1246687563354,
             -3.347536288909065e-14
           ]
-        ]
+        ],
+        "centerOfMass": [
+          -7.818318229331444e-16,
+          -0.5,
+          -4.352963942415439e-17
+        ],
+        "mass": 63.61725123519331
       },
-      "name": "Cylinder 1",
-      "shape": "Part::Cylinder"
+      "metadata": null,
+      "visible": false
     },
     {
       "visible": false,
-      "name": "Box 1",
-      "shape": "Part::Box",
       "metadata": null,
       "parameters": {
         "Height": 1,
-        "Length": 1,
         "Width": 1,
+        "Length": 1,
         "Placement": {
           "Axis": [
             0,
             1,
             0
           ],
-          "Angle": 0,
           "Position": [
             0,
             -1,
             4
-          ]
+          ],
+          "Angle": 0
         }
       },
+      "name": "Box 1",
+      "shape": "Part::Box",
       "shapeMetadata": {
-        "mass": 0.9999999999999998,
         "centerOfMass": [
           0.5,
           -0.5,
@@ -95,17 +94,19 @@
             0.16666666666666663,
             0
           ]
-        ]
+        ],
+        "mass": 0.9999999999999998
       }
     },
     {
+      "name": "Cut 1",
       "shapeMetadata": {
-        "mass": 63.154567578793866,
         "centerOfMass": [
           -0.00351501507535398,
           -0.5,
           -0.031008577976409865
         ],
+        "mass": 63.154567578793866,
         "matrixOfInertia": [
           [
             0.9443835711890814,
@@ -125,37 +126,52 @@
         ]
       },
       "parameters": {
+        "Tool": "Box 1",
         "Base": "Cylinder 1",
         "Placement": {
-          "Angle": 0,
+          "Axis": [
+            0,
+            0,
+            1
+          ],
           "Position": [
             0,
             0,
             0
           ],
-          "Axis": [
-            0,
-            0,
-            1
-          ]
+          "Angle": 0
         },
-        "Tool": "Box 1",
         "Refine": false
       },
-      "shape": "Part::Cut",
-      "visible": false,
       "metadata": null,
-      "name": "Cut 1"
+      "shape": "Part::Cut",
+      "visible": false
     },
     {
+      "shape": "Part::Box",
       "visible": false,
       "name": "Box 2",
+      "metadata": null,
+      "parameters": {
+        "Width": 1,
+        "Length": 1,
+        "Placement": {
+          "Axis": [
+            0,
+            1,
+            0
+          ],
+          "Angle": 22.5,
+          "Position": [
+            1.5307337294603591,
+            -1,
+            3.695518130045147
+          ]
+        },
+        "Height": 1
+      },
       "shapeMetadata": {
-        "centerOfMass": [
-          2.184015211898547,
-          -0.5,
-          3.966116180118245
-        ],
+        "mass": 1,
         "matrixOfInertia": [
           [
             5.551115123125783e-17,
@@ -173,53 +189,19 @@
             5.551115123125783e-17
           ]
         ],
-        "mass": 1
-      },
-      "parameters": {
-        "Width": 1,
-        "Height": 1,
-        "Placement": {
-          "Position": [
-            1.5307337294603591,
-            -1,
-            3.695518130045147
-          ],
-          "Angle": 22.5,
-          "Axis": [
-            0,
-            1,
-            0
-          ]
-        },
-        "Length": 1
-      },
-      "shape": "Part::Box",
-      "metadata": null
+        "centerOfMass": [
+          2.184015211898547,
+          -0.5,
+          3.966116180118245
+        ]
+      }
     },
     {
-      "visible": false,
-      "shape": "Part::Cut",
-      "parameters": {
-        "Placement": {
-          "Position": [
-            0,
-            0,
-            0
-          ],
-          "Axis": [
-            0,
-            0,
-            1
-          ],
-          "Angle": 0
-        },
-        "Tool": "Box 2",
-        "Base": "Cut 1",
-        "Refine": false
-      },
-      "metadata": null,
       "name": "Cut 2",
+      "shape": "Part::Cut",
+      "visible": false,
       "shapeMetadata": {
+        "mass": 62.69188392239449,
         "centerOfMass": [
           -0.01876642136605838,
           -0.5000000000000001,
@@ -241,14 +223,57 @@
             627.0032641216309,
             -2.9976021664879227e-14
           ]
-        ],
-        "mass": 62.69188392239449
-      }
+        ]
+      },
+      "parameters": {
+        "Refine": false,
+        "Placement": {
+          "Position": [
+            0,
+            0,
+            0
+          ],
+          "Angle": 0,
+          "Axis": [
+            0,
+            0,
+            1
+          ]
+        },
+        "Base": "Cut 1",
+        "Tool": "Box 2"
+      },
+      "metadata": null
     },
     {
+      "parameters": {
+        "Height": 1,
+        "Width": 1,
+        "Length": 1,
+        "Placement": {
+          "Axis": [
+            0,
+            1,
+            0
+          ],
+          "Angle": 45,
+          "Position": [
+            2.82842712474619,
+            -1,
+            2.8284271247461903
+          ]
+        }
+      },
+      "shape": "Part::Box",
       "name": "Box 3",
+      "visible": false,
+      "metadata": null,
       "shapeMetadata": {
-        "mass": 0.9999999999999998,
+        "centerOfMass": [
+          3.5355339059327373,
+          -0.5,
+          2.8284271247461903
+        ],
         "matrixOfInertia": [
           [
             -7.751835892115401e-17,
@@ -266,56 +291,10 @@
             -5.204170427930421e-17
           ]
         ],
-        "centerOfMass": [
-          3.5355339059327373,
-          -0.5,
-          2.8284271247461903
-        ]
-      },
-      "visible": false,
-      "shape": "Part::Box",
-      "metadata": null,
-      "parameters": {
-        "Placement": {
-          "Axis": [
-            0,
-            1,
-            0
-          ],
-          "Position": [
-            2.82842712474619,
-            -1,
-            2.8284271247461903
-          ],
-          "Angle": 45
-        },
-        "Height": 1,
-        "Width": 1,
-        "Length": 1
+        "mass": 0.9999999999999998
       }
     },
     {
-      "visible": false,
-      "name": "Cut 3",
-      "metadata": null,
-      "parameters": {
-        "Tool": "Box 3",
-        "Placement": {
-          "Position": [
-            0,
-            0,
-            0
-          ],
-          "Angle": 0,
-          "Axis": [
-            0,
-            0,
-            1
-          ]
-        },
-        "Base": "Cut 2",
-        "Refine": false
-      },
       "shapeMetadata": {
         "centerOfMass": [
           -0.043680831300777795,
@@ -341,13 +320,58 @@
         ],
         "mass": 62.22920026599505
       },
-      "shape": "Part::Cut"
+      "shape": "Part::Cut",
+      "name": "Cut 3",
+      "parameters": {
+        "Base": "Cut 2",
+        "Placement": {
+          "Axis": [
+            0,
+            0,
+            1
+          ],
+          "Angle": 0,
+          "Position": [
+            0,
+            0,
+            0
+          ]
+        },
+        "Refine": false,
+        "Tool": "Box 3"
+      },
+      "visible": false,
+      "metadata": null
     },
     {
-      "name": "Box 4",
-      "metadata": null,
       "shape": "Part::Box",
+      "name": "Box 4",
+      "visible": false,
+      "parameters": {
+        "Length": 1,
+        "Width": 1,
+        "Placement": {
+          "Angle": 67.5,
+          "Axis": [
+            0,
+            1,
+            0
+          ],
+          "Position": [
+            3.695518130045147,
+            -1,
+            1.5307337294603593
+          ]
+        },
+        "Height": 1
+      },
+      "metadata": null,
       "shapeMetadata": {
+        "centerOfMass": [
+          4.348799612483336,
+          -0.5,
+          1.260135679387261
+        ],
         "matrixOfInertia": [
           [
             -2.7755575615628914e-17,
@@ -365,36 +389,34 @@
             0
           ]
         ],
-        "mass": 1,
-        "centerOfMass": [
-          4.348799612483336,
-          -0.5,
-          1.260135679387261
-        ]
-      },
+        "mass": 1
+      }
+    },
+    {
       "parameters": {
-        "Length": 1,
+        "Refine": false,
         "Placement": {
           "Axis": [
             0,
-            1,
-            0
+            0,
+            1
           ],
-          "Angle": 67.5,
+          "Angle": 0,
           "Position": [
-            3.695518130045147,
-            -1,
-            1.5307337294603593
+            0,
+            0,
+            0
           ]
         },
-        "Height": 1,
-        "Width": 1
+        "Tool": "Box 4",
+        "Base": "Cut 3"
       },
-      "visible": false
-    },
-    {
       "shapeMetadata": {
-        "mass": 61.766516609595264,
+        "centerOfMass": [
+          -0.0746753928721283,
+          -0.5,
+          -0.0883125221848677
+        ],
         "matrixOfInertia": [
           [
             11.18639066698855,
@@ -412,43 +434,15 @@
             -3.241851231905457e-14
           ]
         ],
-        "centerOfMass": [
-          -0.0746753928721283,
-          -0.5,
-          -0.0883125221848677
-        ]
+        "mass": 61.766516609595264
       },
       "visible": false,
-      "parameters": {
-        "Refine": false,
-        "Placement": {
-          "Position": [
-            0,
-            0,
-            0
-          ],
-          "Angle": 0,
-          "Axis": [
-            0,
-            0,
-            1
-          ]
-        },
-        "Base": "Cut 3",
-        "Tool": "Box 4"
-      },
-      "name": "Cut 4",
+      "metadata": null,
       "shape": "Part::Cut",
-      "metadata": null
+      "name": "Cut 4"
     },
     {
       "shapeMetadata": {
-        "mass": 0.9999999999999998,
-        "centerOfMass": [
-          4.5,
-          -0.5,
-          -0.4999999999999998
-        ],
         "matrixOfInertia": [
           [
             0,
@@ -465,15 +459,19 @@
             0.16666666666666663,
             0
           ]
+        ],
+        "mass": 0.9999999999999998,
+        "centerOfMass": [
+          4.5,
+          -0.5,
+          -0.4999999999999998
         ]
       },
-      "name": "Box 5",
+      "shape": "Part::Box",
+      "visible": false,
       "parameters": {
-        "Length": 1,
         "Height": 1,
-        "Width": 1,
         "Placement": {
-          "Angle": 90,
           "Position": [
             4,
             -1,
@@ -483,33 +481,36 @@
             0,
             1,
             0
-          ]
-        }
+          ],
+          "Angle": 90
+        },
+        "Width": 1,
+        "Length": 1
       },
       "metadata": null,
-      "shape": "Part::Box",
-      "visible": false
+      "name": "Box 5"
     },
     {
-      "name": "Cut 5",
       "parameters": {
         "Tool": "Box 5",
         "Base": "Cut 4",
-        "Refine": false,
         "Placement": {
-          "Position": [
-            0,
-            0,
-            0
-          ],
           "Angle": 0,
           "Axis": [
             0,
             0,
             1
+          ],
+          "Position": [
+            0,
+            0,
+            0
           ]
-        }
+        },
+        "Refine": false
       },
+      "name": "Cut 5",
+      "visible": false,
       "shape": "Part::Cut",
       "shapeMetadata": {
         "mass": 61.30383295319611,
@@ -536,32 +537,31 @@
           ]
         ]
       },
-      "metadata": null,
-      "visible": false
+      "metadata": null
     },
     {
       "name": "Box 6",
+      "metadata": null,
       "parameters": {
-        "Length": 1,
-        "Width": 1,
         "Placement": {
+          "Angle": 112.5,
           "Position": [
             3.695518130045147,
             -1,
             -1.530733729460359
           ],
-          "Angle": 112.5,
           "Axis": [
             0,
             1,
             0
           ]
         },
-        "Height": 1
+        "Length": 1,
+        "Height": 1,
+        "Width": 1
       },
-      "metadata": null,
-      "visible": false,
       "shape": "Part::Box",
+      "visible": false,
       "shapeMetadata": {
         "matrixOfInertia": [
           [
@@ -589,15 +589,29 @@
       }
     },
     {
-      "shape": "Part::Cut",
       "visible": false,
+      "shape": "Part::Cut",
+      "metadata": null,
+      "parameters": {
+        "Refine": false,
+        "Tool": "Box 6",
+        "Base": "Cut 5",
+        "Placement": {
+          "Angle": 0,
+          "Position": [
+            0,
+            0,
+            0
+          ],
+          "Axis": [
+            0,
+            0,
+            1
+          ]
+        }
+      },
+      "name": "Cut 6",
       "shapeMetadata": {
-        "centerOfMass": [
-          -0.13634003954579735,
-          -0.49999999999999994,
-          -0.0703184375689037
-        ],
-        "mass": 60.84114929679677,
         "matrixOfInertia": [
           [
             6.879414751454822,
@@ -614,35 +628,22 @@
             592.0438765064549,
             -3.064215547965432e-14
           ]
+        ],
+        "mass": 60.84114929679677,
+        "centerOfMass": [
+          -0.13634003954579735,
+          -0.49999999999999994,
+          -0.0703184375689037
         ]
-      },
-      "parameters": {
-        "Placement": {
-          "Axis": [
-            0,
-            0,
-            1
-          ],
-          "Angle": 0,
-          "Position": [
-            0,
-            0,
-            0
-          ]
-        },
-        "Tool": "Box 6",
-        "Base": "Cut 5",
-        "Refine": false
-      },
-      "name": "Cut 6",
-      "metadata": null
+      }
     },
     {
-      "visible": false,
       "metadata": null,
+      "visible": false,
       "name": "Box 7",
       "parameters": {
         "Placement": {
+          "Angle": 135,
           "Axis": [
             0,
             1,
@@ -652,15 +653,18 @@
             2.8284271247461903,
             -1,
             -2.82842712474619
-          ],
-          "Angle": 135
+          ]
         },
-        "Width": 1,
         "Length": 1,
-        "Height": 1
+        "Height": 1,
+        "Width": 1
       },
-      "shape": "Part::Box",
       "shapeMetadata": {
+        "centerOfMass": [
+          2.8284271247461903,
+          -0.5,
+          -3.5355339059327373
+        ],
         "matrixOfInertia": [
           [
             7.751835892115401e-17,
@@ -678,20 +682,15 @@
             -5.551115123125783e-17
           ]
         ],
-        "mass": 0.9999999999999998,
-        "centerOfMass": [
-          2.8284271247461903,
-          -0.5,
-          -3.5355339059327373
-        ]
-      }
+        "mass": 0.9999999999999998
+      },
+      "shape": "Part::Box"
     },
     {
-      "name": "Cut 7",
-      "visible": false,
       "parameters": {
         "Refine": false,
         "Base": "Cut 6",
+        "Tool": "Box 7",
         "Placement": {
           "Axis": [
             0,
@@ -704,16 +703,18 @@
             0,
             0
           ]
-        },
-        "Tool": "Box 7"
+        }
       },
       "metadata": null,
+      "visible": false,
+      "shape": "Part::Cut",
       "shapeMetadata": {
         "centerOfMass": [
           -0.15771956559179715,
           -0.4999999999999999,
           -0.04532300780652983
         ],
+        "mass": 60.37846564039756,
         "matrixOfInertia": [
           [
             2.6512168859188714,
@@ -730,40 +731,31 @@
             583.4081987492677,
             -2.9976021664879227e-14
           ]
-        ],
-        "mass": 60.37846564039756
+        ]
       },
-      "shape": "Part::Cut"
+      "name": "Cut 7"
     },
     {
-      "metadata": null,
       "parameters": {
-        "Height": 1,
-        "Length": 1,
-        "Width": 1,
         "Placement": {
           "Angle": 157.5,
-          "Position": [
-            1.5307337294603596,
-            -1,
-            -3.695518130045147
-          ],
           "Axis": [
             0,
             1,
             0
+          ],
+          "Position": [
+            1.5307337294603596,
+            -1,
+            -3.695518130045147
           ]
-        }
+        },
+        "Length": 1,
+        "Height": 1,
+        "Width": 1
       },
-      "shape": "Part::Box",
-      "visible": false,
       "shapeMetadata": {
         "mass": 1,
-        "centerOfMass": [
-          1.2601356793872611,
-          -0.5,
-          -4.348799612483336
-        ],
         "matrixOfInertia": [
           [
             8.326672684688674e-17,
@@ -780,38 +772,42 @@
             0.16666666666666663,
             -5.551115123125783e-17
           ]
+        ],
+        "centerOfMass": [
+          1.2601356793872611,
+          -0.5,
+          -4.348799612483336
         ]
       },
-      "name": "Box 8"
+      "name": "Box 8",
+      "shape": "Part::Box",
+      "metadata": null,
+      "visible": false
     },
     {
-      "shape": "Part::Cut",
+      "visible": false,
       "parameters": {
         "Tool": "Box 8",
+        "Refine": false,
+        "Base": "Cut 7",
         "Placement": {
-          "Axis": [
-            0,
-            0,
-            1
-          ],
           "Position": [
             0,
             0,
             0
           ],
-          "Angle": 0
-        },
-        "Refine": false,
-        "Base": "Cut 7"
+          "Angle": 0,
+          "Axis": [
+            0,
+            0,
+            1
+          ]
+        }
       },
+      "name": "Cut 8",
+      "shape": "Part::Cut",
       "metadata": null,
       "shapeMetadata": {
-        "centerOfMass": [
-          -0.1680224379816783,
-          -0.4999999999999999,
-          -0.01405836569784849
-        ],
-        "mass": 59.91578198399833,
         "matrixOfInertia": [
           [
             0.14152831958136713,
@@ -828,40 +824,19 @@
             574.889312503074,
             -2.4091839634365897e-14
           ]
+        ],
+        "mass": 59.91578198399833,
+        "centerOfMass": [
+          -0.1680224379816783,
+          -0.4999999999999999,
+          -0.01405836569784849
         ]
-      },
-      "name": "Cut 8",
-      "visible": false
+      }
     },
     {
-      "shape": "Part::Box",
-      "metadata": null,
-      "visible": false,
       "name": "Box 9",
-      "parameters": {
-        "Width": 1,
-        "Placement": {
-          "Angle": 180,
-          "Position": [
-            4.898587196589413e-16,
-            -1,
-            -4
-          ],
-          "Axis": [
-            0,
-            1,
-            0
-          ]
-        },
-        "Height": 1,
-        "Length": 1
-      },
       "shapeMetadata": {
-        "centerOfMass": [
-          -0.49999999999999944,
-          -0.5,
-          -4.5
-        ],
+        "mass": 0.9999999999999999,
         "matrixOfInertia": [
           [
             2.7755575615628914e-17,
@@ -879,19 +854,62 @@
             0
           ]
         ],
-        "mass": 0.9999999999999999
+        "centerOfMass": [
+          -0.49999999999999944,
+          -0.5,
+          -4.5
+        ]
+      },
+      "visible": false,
+      "metadata": null,
+      "shape": "Part::Box",
+      "parameters": {
+        "Height": 1,
+        "Placement": {
+          "Position": [
+            4.898587196589413e-16,
+            -1,
+            -4
+          ],
+          "Angle": 180,
+          "Axis": [
+            0,
+            1,
+            0
+          ]
+        },
+        "Length": 1,
+        "Width": 1
       }
     },
     {
-      "metadata": null,
+      "shape": "Part::Cut",
       "visible": false,
+      "parameters": {
+        "Refine": false,
+        "Placement": {
+          "Position": [
+            0,
+            0,
+            0
+          ],
+          "Angle": 0,
+          "Axis": [
+            0,
+            0,
+            1
+          ]
+        },
+        "Base": "Cut 8",
+        "Tool": "Box 9"
+      },
       "shapeMetadata": {
+        "mass": 59.45309832759892,
         "centerOfMass": [
           -0.16559618896838763,
           -0.4999999999999999,
           0.01877135743170458
         ],
-        "mass": 59.45309832759892,
         "matrixOfInertia": [
           [
             0.7526921096976348,
@@ -910,32 +928,34 @@
           ]
         ]
       },
-      "shape": "Part::Cut",
+      "name": "Cut 9",
+      "metadata": null
+    },
+    {
+      "name": "Box 10",
+      "shape": "Part::Box",
+      "visible": false,
+      "metadata": null,
       "parameters": {
-        "Refine": false,
-        "Base": "Cut 8",
-        "Tool": "Box 9",
         "Placement": {
           "Axis": [
             0,
-            0,
-            1
-          ],
-          "Position": [
-            0,
-            0,
+            1,
             0
           ],
-          "Angle": 0
-        }
+          "Angle": 202.49999999999997,
+          "Position": [
+            -1.5307337294603587,
+            -1,
+            -3.6955181300451474
+          ]
+        },
+        "Length": 1,
+        "Height": 1,
+        "Width": 1
       },
-      "name": "Cut 9"
-    },
-    {
-      "visible": false,
-      "name": "Box 10",
-      "shape": "Part::Box",
       "shapeMetadata": {
+        "mass": 0.9999999999999999,
         "centerOfMass": [
           -2.1840152118985467,
           -0.5,
@@ -957,57 +977,11 @@
             0.16666666666666669,
             2.7755575615628914e-17
           ]
-        ],
-        "mass": 0.9999999999999999
-      },
-      "metadata": null,
-      "parameters": {
-        "Width": 1,
-        "Height": 1,
-        "Placement": {
-          "Position": [
-            -1.5307337294603587,
-            -1,
-            -3.6955181300451474
-          ],
-          "Axis": [
-            0,
-            1,
-            0
-          ],
-          "Angle": 202.49999999999997
-        },
-        "Length": 1
+        ]
       }
     },
     {
-      "visible": false,
-      "parameters": {
-        "Tool": "Box 10",
-        "Base": "Cut 9",
-        "Refine": false,
-        "Placement": {
-          "Axis": [
-            0,
-            0,
-            1
-          ],
-          "Position": [
-            0,
-            0,
-            0
-          ],
-          "Angle": 0
-        }
-      },
-      "shape": "Part::Cut",
       "shapeMetadata": {
-        "centerOfMass": [
-          -0.15071420504781,
-          -0.5,
-          0.048148972144044816
-        ],
-        "mass": 58.99041467119952,
         "matrixOfInertia": [
           [
             4.054859447660694,
@@ -1024,13 +998,46 @@
             558.2329562652437,
             -2.19824158875781e-14
           ]
+        ],
+        "mass": 58.99041467119952,
+        "centerOfMass": [
+          -0.15071420504781,
+          -0.5,
+          0.048148972144044816
         ]
       },
-      "name": "Cut 10",
-      "metadata": null
+      "metadata": null,
+      "parameters": {
+        "Placement": {
+          "Position": [
+            0,
+            0,
+            0
+          ],
+          "Axis": [
+            0,
+            0,
+            1
+          ],
+          "Angle": 0
+        },
+        "Tool": "Box 10",
+        "Refine": false,
+        "Base": "Cut 9"
+      },
+      "visible": false,
+      "shape": "Part::Cut",
+      "name": "Cut 10"
     },
     {
+      "name": "Box 11",
+      "visible": false,
       "shapeMetadata": {
+        "centerOfMass": [
+          -3.5355339059327373,
+          -0.5,
+          -2.8284271247461907
+        ],
         "matrixOfInertia": [
           [
             4.209144961729675e-18,
@@ -1048,64 +1055,52 @@
             -3.469446951953614e-18
           ]
         ],
-        "centerOfMass": [
-          -3.5355339059327373,
-          -0.5,
-          -2.8284271247461907
-        ],
         "mass": 0.9999999999999998
       },
       "parameters": {
-        "Length": 1,
-        "Height": 1,
         "Placement": {
-          "Position": [
-            -2.82842712474619,
-            -1,
-            -2.8284271247461907
-          ],
           "Axis": [
             0,
             1,
             0
           ],
-          "Angle": 225
+          "Angle": 225,
+          "Position": [
+            -2.82842712474619,
+            -1,
+            -2.8284271247461907
+          ]
         },
-        "Width": 1
+        "Height": 1,
+        "Width": 1,
+        "Length": 1
       },
       "shape": "Part::Box",
-      "name": "Box 11",
-      "metadata": null,
-      "visible": false
+      "metadata": null
     },
     {
+      "shape": "Part::Cut",
+      "metadata": null,
+      "visible": false,
       "parameters": {
+        "Refine": false,
+        "Tool": "Box 11",
+        "Base": "Cut 10",
         "Placement": {
-          "Axis": [
-            0,
-            0,
-            1
-          ],
           "Angle": 0,
           "Position": [
             0,
             0,
             0
+          ],
+          "Axis": [
+            0,
+            0,
+            1
           ]
-        },
-        "Base": "Cut 10",
-        "Refine": false,
-        "Tool": "Box 11"
+        }
       },
-      "visible": false,
-      "name": "Cut 11",
       "shapeMetadata": {
-        "mass": 58.52773101480008,
-        "centerOfMass": [
-          -0.12556394099526225,
-          -0.4999999999999999,
-          0.06950736741368367
-        ],
         "matrixOfInertia": [
           [
             8.048634834392864,
@@ -1122,34 +1117,20 @@
             550.06263947424,
             -2.2648549702353193e-14
           ]
-        ]
+        ],
+        "centerOfMass": [
+          -0.12556394099526225,
+          -0.4999999999999999,
+          0.06950736741368367
+        ],
+        "mass": 58.52773101480008
       },
-      "shape": "Part::Cut",
-      "metadata": null
+      "name": "Cut 11"
     },
     {
-      "metadata": null,
-      "parameters": {
-        "Length": 1,
-        "Height": 1,
-        "Width": 1,
-        "Placement": {
-          "Position": [
-            -3.695518130045146,
-            -1,
-            -1.5307337294603613
-          ],
-          "Angle": 247.49999999999997,
-          "Axis": [
-            0,
-            1,
-            0
-          ]
-        }
-      },
       "visible": false,
+      "shape": "Part::Box",
       "shapeMetadata": {
-        "mass": 0.9999999999999998,
         "centerOfMass": [
           -4.348799612483335,
           -0.4999999999999999,
@@ -1171,12 +1152,51 @@
             0.16666666666666685,
             5.551115123125783e-17
           ]
-        ]
+        ],
+        "mass": 0.9999999999999998
       },
-      "name": "Box 12",
-      "shape": "Part::Box"
+      "metadata": null,
+      "parameters": {
+        "Width": 1,
+        "Placement": {
+          "Axis": [
+            0,
+            1,
+            0
+          ],
+          "Angle": 247.49999999999997,
+          "Position": [
+            -3.695518130045146,
+            -1,
+            -1.5307337294603613
+          ]
+        },
+        "Height": 1,
+        "Length": 1
+      },
+      "name": "Box 12"
     },
     {
+      "parameters": {
+        "Tool": "Box 12",
+        "Refine": false,
+        "Base": "Cut 11",
+        "Placement": {
+          "Axis": [
+            0,
+            0,
+            1
+          ],
+          "Angle": 0,
+          "Position": [
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      "shape": "Part::Cut",
+      "metadata": null,
       "shapeMetadata": {
         "mass": 58.06504735840064,
         "centerOfMass": [
@@ -1202,59 +1222,17 @@
           ]
         ]
       },
-      "metadata": null,
       "visible": false,
-      "name": "Cut 12",
-      "shape": "Part::Cut",
-      "parameters": {
-        "Base": "Cut 11",
-        "Refine": false,
-        "Placement": {
-          "Position": [
-            0,
-            0,
-            0
-          ],
-          "Axis": [
-            0,
-            0,
-            1
-          ],
-          "Angle": 0
-        },
-        "Tool": "Box 12"
-      }
+      "name": "Cut 12"
     },
     {
-      "name": "Box 13",
-      "visible": false,
-      "metadata": null,
-      "parameters": {
-        "Placement": {
-          "Position": [
-            -4,
-            -1,
-            -7.347880794884119e-16
-          ],
-          "Axis": [
-            0,
-            1,
-            0
-          ],
-          "Angle": 270
-        },
-        "Height": 1,
-        "Width": 1,
-        "Length": 1
-      },
-      "shape": "Part::Box",
       "shapeMetadata": {
-        "mass": 0.9999999999999998,
         "centerOfMass": [
           -4.5,
           -0.5,
           0.49999999999999917
         ],
+        "mass": 0.9999999999999998,
         "matrixOfInertia": [
           [
             -5.551115123125783e-17,
@@ -1272,34 +1250,41 @@
             0
           ]
         ]
-      }
-    },
-    {
+      },
+      "name": "Box 13",
       "parameters": {
-        "Tool": "Box 13",
+        "Width": 1,
         "Placement": {
-          "Angle": 0,
-          "Position": [
-            0,
-            0,
-            0
-          ],
+          "Angle": 270,
           "Axis": [
             0,
-            0,
-            1
+            1,
+            0
+          ],
+          "Position": [
+            -4,
+            -1,
+            -7.347880794884119e-16
           ]
         },
-        "Base": "Cut 12",
-        "Refine": false
+        "Height": 1,
+        "Length": 1
       },
+      "shape": "Part::Box",
+      "metadata": null,
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "visible": false,
+      "shape": "Part::Cut",
       "shapeMetadata": {
-        "mass": 57.60236370200123,
         "centerOfMass": [
           -0.06069930659653019,
           -0.5000000000000002,
           0.07621995617677625
         ],
+        "mass": 57.60236370200123,
         "matrixOfInertia": [
           [
             9.575057306204453,
@@ -1318,19 +1303,47 @@
           ]
         ]
       },
-      "shape": "Part::Cut",
-      "metadata": null,
-      "visible": false,
+      "parameters": {
+        "Refine": false,
+        "Placement": {
+          "Angle": 0,
+          "Position": [
+            0,
+            0,
+            0
+          ],
+          "Axis": [
+            0,
+            0,
+            1
+          ]
+        },
+        "Tool": "Box 13",
+        "Base": "Cut 12"
+      },
       "name": "Cut 13"
     },
     {
+      "metadata": null,
+      "parameters": {
+        "Width": 1,
+        "Height": 1,
+        "Placement": {
+          "Position": [
+            -3.6955181300451465,
+            -1,
+            1.53073372946036
+          ],
+          "Axis": [
+            0,
+            1,
+            0
+          ],
+          "Angle": 292.50000000000006
+        },
+        "Length": 1
+      },
       "shapeMetadata": {
-        "centerOfMass": [
-          -3.9661161801182447,
-          -0.5,
-          2.1840152118985485
-        ],
-        "mass": 0.9999999999999999,
         "matrixOfInertia": [
           [
             -8.326672684688674e-17,
@@ -1347,34 +1360,42 @@
             0.16666666666666663,
             0
           ]
-        ]
-      },
-      "metadata": null,
-      "shape": "Part::Box",
-      "parameters": {
-        "Placement": {
-          "Position": [
-            -3.6955181300451465,
-            -1,
-            1.53073372946036
-          ],
-          "Axis": [
-            0,
-            1,
-            0
-          ],
-          "Angle": 292.50000000000006
-        },
-        "Height": 1,
-        "Length": 1,
-        "Width": 1
+        ],
+        "centerOfMass": [
+          -3.9661161801182447,
+          -0.5,
+          2.1840152118985485
+        ],
+        "mass": 0.9999999999999999
       },
       "visible": false,
+      "shape": "Part::Box",
       "name": "Box 14"
     },
     {
+      "shape": "Part::Cut",
+      "metadata": null,
+      "visible": false,
+      "name": "Cut 14",
+      "parameters": {
+        "Placement": {
+          "Position": [
+            0,
+            0,
+            0
+          ],
+          "Axis": [
+            0,
+            0,
+            1
+          ],
+          "Angle": 0
+        },
+        "Tool": "Box 14",
+        "Refine": false,
+        "Base": "Cut 13"
+      },
       "shapeMetadata": {
-        "mass": 57.139680045601835,
         "matrixOfInertia": [
           [
             6.1895563595858905,
@@ -1392,38 +1413,15 @@
             -9.325873406851315e-15
           ]
         ],
+        "mass": 57.139680045601835,
         "centerOfMass": [
           -0.031013667909564887,
           -0.5000000000000001,
           0.06013223352844201
         ]
-      },
-      "name": "Cut 14",
-      "metadata": null,
-      "visible": false,
-      "shape": "Part::Cut",
-      "parameters": {
-        "Tool": "Box 14",
-        "Refine": false,
-        "Base": "Cut 13",
-        "Placement": {
-          "Axis": [
-            0,
-            0,
-            1
-          ],
-          "Position": [
-            0,
-            0,
-            0
-          ],
-          "Angle": 0
-        }
       }
     },
     {
-      "visible": false,
-      "name": "Box 15",
       "parameters": {
         "Length": 1,
         "Width": 1,
@@ -1442,7 +1440,15 @@
           ]
         }
       },
+      "shape": "Part::Box",
+      "metadata": null,
       "shapeMetadata": {
+        "centerOfMass": [
+          -2.8284271247461907,
+          -0.5,
+          3.535533905932737
+        ],
+        "mass": 0.9999999999999999,
         "matrixOfInertia": [
           [
             2.9992192551289093e-17,
@@ -1459,38 +1465,33 @@
             0.16666666666666674,
             0
           ]
-        ],
-        "mass": 0.9999999999999999,
-        "centerOfMass": [
-          -2.8284271247461907,
-          -0.5,
-          3.535533905932737
         ]
       },
-      "shape": "Part::Box",
-      "metadata": null
+      "visible": false,
+      "name": "Box 15"
     },
     {
-      "visible": false,
+      "metadata": null,
       "parameters": {
         "Refine": false,
         "Placement": {
           "Angle": 0,
-          "Position": [
-            0,
-            0,
-            0
-          ],
           "Axis": [
             0,
             0,
             1
+          ],
+          "Position": [
+            0,
+            0,
+            0
           ]
         },
         "Base": "Cut 14",
         "Tool": "Box 15"
       },
       "shapeMetadata": {
+        "mass": 56.676996389202436,
         "centerOfMass": [
           -0.009604079702626488,
           -0.4999999999999999,
@@ -1512,17 +1513,15 @@
             517.4336341759059,
             -8.770761894538737e-15
           ]
-        ],
-        "mass": 56.676996389202436
+        ]
       },
       "shape": "Part::Cut",
       "name": "Cut 15",
-      "metadata": null
+      "visible": false
     },
     {
+      "visible": false,
       "parameters": {
-        "Width": 1,
-        "Length": 1,
         "Placement": {
           "Axis": [
             0,
@@ -1536,19 +1535,13 @@
           ],
           "Angle": 337.49999999999994
         },
-        "Height": 1
+        "Length": 1,
+        "Height": 1,
+        "Width": 1
       },
       "shape": "Part::Box",
-      "metadata": null,
-      "visible": false,
       "name": "Box 16",
       "shapeMetadata": {
-        "mass": 0.9999999999999998,
-        "centerOfMass": [
-          -1.2601356793872636,
-          -0.5,
-          4.348799612483335
-        ],
         "matrixOfInertia": [
           [
             -5.551115123125783e-17,
@@ -1565,18 +1558,37 @@
             0.16666666666666696,
             -1.1102230246251565e-16
           ]
+        ],
+        "mass": 0.9999999999999998,
+        "centerOfMass": [
+          -1.2601356793872636,
+          -0.5,
+          4.348799612483335
         ]
-      }
+      },
+      "metadata": null
     },
     {
-      "metadata": null,
+      "parameters": {
+        "Refine": false,
+        "Base": "Cut 15",
+        "Tool": "Box 16",
+        "Placement": {
+          "Angle": 0,
+          "Position": [
+            0,
+            0,
+            0
+          ],
+          "Axis": [
+            0,
+            0,
+            1
+          ]
+        }
+      },
+      "visible": false,
       "shapeMetadata": {
-        "mass": 56.21431273280302,
-        "centerOfMass": [
-          -4.1642512976168476e-15,
-          -0.5000000000000002,
-          -3.360630783981422e-14
-        ],
         "matrixOfInertia": [
           [
             -8.235634396669332e-13,
@@ -1593,60 +1605,22 @@
             509.0606690293619,
             -3.552713678800097e-15
           ]
-        ]
+        ],
+        "centerOfMass": [
+          -4.1642512976168476e-15,
+          -0.5000000000000002,
+          -3.360630783981422e-14
+        ],
+        "mass": 56.21431273280302
       },
+      "metadata": null,
       "shape": "Part::Cut",
-      "parameters": {
-        "Tool": "Box 16",
-        "Base": "Cut 15",
-        "Placement": {
-          "Angle": 0,
-          "Position": [
-            0,
-            0,
-            0
-          ],
-          "Axis": [
-            0,
-            0,
-            1
-          ]
-        },
-        "Refine": false
-      },
-      "name": "Cut 16",
-      "visible": false
+      "name": "Cut 16"
     },
     {
-      "shape": "Part::Cylinder",
+      "visible": false,
       "name": "Cylinder 2",
-      "shapeMetadata": {
-        "centerOfMass": [
-          1.8485275071753768e-16,
-          -6.5,
-          7.282296601517395e-16
-        ],
-        "mass": 40.84070449666732,
-        "matrixOfInertia": [
-          [
-            1.067137891041123e-15,
-            6.490534976933931e-14,
-            585.3834311188975
-          ],
-          [
-            585.383431118898,
-            5.995204332975839e-15,
-            1.067137891041123e-15
-          ],
-          [
-            5.995204332975839e-15,
-            20.420352248333778,
-            6.490534976933931e-14
-          ]
-        ]
-      },
       "parameters": {
-        "Radius": 1,
         "Placement": {
           "Position": [
             0,
@@ -1660,21 +1634,42 @@
           ],
           "Angle": 90
         },
-        "Height": 13,
-        "Angle": 360
+        "Angle": 360,
+        "Height": 5,
+        "Radius": 1
       },
-      "metadata": null,
-      "visible": false
+      "shapeMetadata": {
+        "mass": 15.707963267948966,
+        "centerOfMass": [
+          1.1308638867425837e-16,
+          -2.5,
+          2.9171818948567957e-16
+        ],
+        "matrixOfInertia": [
+          [
+            5.792109746937182e-16,
+            4.4219973413473714e-15,
+            36.651914291880885
+          ],
+          [
+            36.651914291881,
+            -8.881784197001252e-16,
+            5.792109746937182e-16
+          ],
+          [
+            -8.881784197001252e-16,
+            7.85398163397453,
+            4.4219973413473714e-15
+          ]
+        ]
+      },
+      "shape": "Part::Cylinder",
+      "metadata": null
     },
     {
       "name": "Cut 17",
-      "shape": "Part::Cut",
+      "metadata": null,
       "shapeMetadata": {
-        "centerOfMass": [
-          -4.108799189973101e-15,
-          -0.5,
-          -3.538001223351958e-14
-        ],
         "matrixOfInertia": [
           [
             -8.142964323488116e-13,
@@ -1692,37 +1687,42 @@
             -8.273558476299222e-15
           ]
         ],
-        "mass": 53.07272007921325
+        "mass": 53.07272007921325,
+        "centerOfMass": [
+          -4.108799189973101e-15,
+          -0.5,
+          -3.538001223351958e-14
+        ]
       },
-      "metadata": null,
       "parameters": {
+        "Tool": "Cylinder 2",
+        "Refine": false,
+        "Base": "Cut 16",
         "Placement": {
           "Position": [
             0,
             0,
             0
           ],
+          "Angle": 0,
           "Axis": [
             0,
             0,
             1
-          ],
-          "Angle": 0
-        },
-        "Base": "Cut 16",
-        "Refine": false,
-        "Tool": "Cylinder 2"
+          ]
+        }
       },
+      "shape": "Part::Cut",
       "visible": true
     }
   ],
   "options": {
     "guidata": {
-      "objectId": {},
-      "Cylinder 2": {
+      "Cut 17": {
         "visibility": true
       },
-      "Cut 17": {
+      "objectId": {},
+      "Cylinder 2": {
         "visibility": true
       }
     }

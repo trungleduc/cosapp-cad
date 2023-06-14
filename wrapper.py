@@ -41,7 +41,6 @@ class JcadNotification:
 
     async def _remove_warning(self):
         for old_name, old_annotation_id in self._highlighted_shape.items():
-            print("removing", old_name, old_annotation_id)
             self._jcad_doc.set_color(old_name, None)
             self._jcad_doc.remove_annotation(old_annotation_id)
         self._highlighted_shape = {}
@@ -51,8 +50,7 @@ class JcadNotification:
             if old_name != name:
                 self._jcad_doc.set_color(old_name, None)
             self._jcad_doc.remove_annotation(old_annotation_id)
-        print('SET COLOR', name)
-
+            
         self._jcad_doc.set_color(name, [1, 0, 0])
         annotation_id = self._jcad_doc.add_annotation(
             name,
